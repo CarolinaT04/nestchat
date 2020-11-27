@@ -1,9 +1,15 @@
 import { Module } from '@nestjs/common';
-import { AppGateway } from './app.gateway';
+import { ConfigModule } from '@nestjs/config'
+import { MessageEventsModule } from './message-events/message-events.module';
 
 @Module({
-  imports: [],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+    MessageEventsModule,
+  ],
   controllers: [],
-  providers: [AppGateway],
+  providers: [],
 })
 export class AppModule {}

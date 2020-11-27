@@ -1,4 +1,4 @@
-import { SubscribeMessage, WebSocketGateway, OnGatewayConnection, OnGatewayInit, OnGatewayDisconnect, WebSocketServer } from '@nestjs/websockets';
+/* import { SubscribeMessage, WebSocketGateway, OnGatewayConnection, OnGatewayInit, OnGatewayDisconnect, WebSocketServer } from '@nestjs/websockets';
 import { Logger } from '@nestjs/common';
 import {Socket , Server} from 'socket.io';
 
@@ -11,22 +11,24 @@ export class AppGateway implements OnGatewayConnection , OnGatewayInit, OnGatewa
 
   @SubscribeMessage('msgToServer')
   handleMessage(client: Socket, payload: string):void {
-  this.server.emit('msgToCliente', payload); // to send data to all connected clients
+  this.server.emit('msgToClient', payload); // to send data to all connected clients
   }
 
   afterInit(server: Server){
     this.logger.log('Init');
   }
+ 
 
   /*This method register when a new client 
-  is connected to the server*/
+  is connected to the server
   handleConnection(client: Socket){
     this.logger.log(`Client connected ${client.id}`);
   }
 
   /* This method register when a  client 
-     is disconnected to the server*/
+     is disconnected to the server
   handleDisconnect(client: Socket){
     this.logger.log(`Client disconnected: ${client.id}`);
   }
 }
+*/
